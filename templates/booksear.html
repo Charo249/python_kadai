@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/book.css')}}">
+
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <!-- ヘッダーロゴ -->
+        <div class="logo">図書管理システム</div>
+            
+       <form method="post" action="" class="search_container">
+        <input type="text" name = "name" size="25" placeholder="キーワードを入力">
+        <input type="submit" value="&#xf002;">
+      </form> 
+        
+        <!-- ハンバーガーメニュー部分 -->
+        <div class="nav">
+      
+          
+          
+          <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+          <input id="drawer_input" class="drawer_hidden" type="checkbox">
+      
+          <!-- ハンバーガーアイコン -->
+          <label for="drawer_input" class="drawer_open"><span></span></label>
+      
+          <!-- メニュー -->
+          <nav class="nav_content">
+            <ul class="nav_list">
+              <li class="nav_item"><a href = "{{url_for('book_register')}}">図書登録</a></li>
+              <li class="nav_item"><a href = "{{url_for('book_all')}}">図書一覧</a></li>
+              <li class="nav_item"><a href = "{{url_for('book_delete')}}">図書削除</a></li>
+              <li class="nav_item"><a href = "{{url_for('book_update')}}">図書情報変更</a></li>
+              
+              <li class="nav_item"><a href = "{{url_for('logout')}}">ログアウト</a></li>
+              
+            </ul>
+          </nav>
+     
+        </div>
+      </header>
+
+      <form action="{{url_for('book_search_exe')}}" method="post">
+        
+        <input type="text" name="title" value="{{title}}">
+        <input type="submit" value="検索"></button>
+
+      
+
+<div id="top" class="background" >
+
+   <h3 style="text-align:center">検索結果</h3>
+   <table border="1">
+   <tr>
+      <th style="color:green; text-align: left;" width="320">タイトル</th>
+      <th style="color:green; text-align: left;"  width="320">著者</th>
+      <th style="color:green; text-align: left;" width="320">出版社</th>
+      <th style="color:green; text-align: left;" width="320">isbn</th>
+   </tr>
+
+   {% for book_kadai in book2%}
+   <tr>
+      <th style="color:none; text-align: left;" width="320"><font size="2">{{ book[0] }}<font></th>
+      <th style="color:none; text-align: left;" width="320"><font size="2">{{ book[1] }}<font></th>
+      <th style="color:none; text-align: left;" width="320"><font size="2">{{ book[2] }}<font></th>
+      <th style="color:none; text-align: left;" width="320"><font size="2">{{ book[3] }}<font></th>
+   </tr>
+   {% endfor %}
+
+   </table>
+  </div>
+      <div style="text-align:right">
+      <a href="{{url_for('return_bookall')}}">戻る</a>
+      </div>
+</div>
+</body>
+</html>

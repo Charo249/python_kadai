@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/book.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <!-- ヘッダーロゴ -->
+        <div class="logo">図書管理システム</div>
+            
+      
+        <!-- ハンバーガーメニュー部分 -->
+        <div class="nav">
+      
+          
+          
+          <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+          <input id="drawer_input" class="drawer_hidden" type="checkbox">
+      
+          <!-- ハンバーガーアイコン -->
+          <label for="drawer_input" class="drawer_open"><span></span></label>
+      
+          <!-- メニュー -->
+          <nav class="nav_content">
+            <ul class="nav_list">
+              <li class="nav_item"><a href = "{{url_for('book_register')}}">図書登録</a></li>
+              <li class="nav_item"><a href = "{{url_for('book_all')}}">図書一覧</a></li>
+              <li class="nav_item"><a href = "{{url_for('book_delete')}}">図書削除</a></li>
+              <li class="nav_item"><a href = "{{url_for('book_update')}}">図書情報変更</a></li>
+              
+              <li class="nav_item"><a href = "{{url_for('logout')}}">ログアウト</a></li>
+              
+            </ul>
+          </nav>
+     
+        </div>
+      </header>
+  
+  <div class = "flex-box">
+    <div class = "top-box-inner">
+    <a href = "{{url_for('book_register')}}" class= "button-admin" style = margin-bottom:100px>図書登録</a>
+    </div>
+    <div class = "top-box-inner">
+    <a href = "{{url_for('book_all')}}" class= "button-admin" style = margin-bottom:100px>図書一覧</a>
+    </div>
+    <div class = "top-box-inner">    
+    <a href = "{{url_for('book_delete')}}" class= "button-admin">図書削除</a>
+    </div>
+    <div class = "top-box-inner">
+    <a href = "{{url_for('book_update')}}" class= "button-admin">図書情報変更</a>
+    </div>
+  </div> 
+</body>
+</html>

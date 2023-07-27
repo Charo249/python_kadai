@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/book.css')}}">
+    
+    <title>Document</title>
+</head>
+<body>
+    
+    <header class="header">
+        <!-- ヘッダーロゴ -->
+        <div class="logo">図書管理システム</div>
+        </header>
+
+
+    {% if error != null %}
+        <p style="color:red">{{error}}</p>
+    {% endif %}
+    
+    {% if msg != null %}
+        <p style="color:blue">{{msg}}</p>
+    {% endif %}
+    <div class= "second-life">
+    <h1>ログイン</h1>
+    <form action="{{url_for('login')}}"method="post">
+        
+        <label class ="big">ユーザー名</label>
+        <input type="text" class = "big" name="name" value ="{{data.name if data is defined else ''}}" style= "width: 100%; height: 40px;"><br><br>
+        
+        <label class ="big">パスワード</label>
+        <input type="password" class ="big" name="password" value="{{data.password if data is defined else ''}}" style= "width: 100%; height: 40px;"><br><br><br>
+        
+        <div class = "top-box">
+        <div class= "top-box-inner">
+        <button type="submit" class = "button">ログイン</button>
+        </div>
+        <div class= "top-box-inner">
+        <a href = "{{url_for('register_form')}}" class= "button">新規登録</a>
+        </div>
+    </div>
+    </form>
+    
+    </div>
+</body>
+</html>

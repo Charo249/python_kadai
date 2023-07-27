@@ -1,0 +1,469 @@
+@charset "UTF-8";
+/** ログイン画面のCSS **/
+.second-life {
+height: 400px;
+width: 500px;
+position: absolute;
+left: 50%;
+top: 50%;
+margin-top: -200px;
+margin-left: -250px;
+background-repeat: no-repeat;
+text-align: center;
+}
+
+
+
+.input {
+margin-top: 20px;
+}
+
+.big{
+	font-size:20pt;
+}
+.button{
+	font-size:20pt;
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 200px;
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	border: 2px solid #27acd9;
+	background: #27acd9;
+	color: #fff;
+	transition: 0.5s;
+	padding: 10px 5px;
+}
+
+.button:hover{
+	color: #27acd9;
+	background: #fff;
+}
+
+/** ここまで **/
+
+table {
+  border-collapse:  collapse; /* セルの線を重ねる */
+}
+
+tr:nth-child(odd) {
+  background-color:  #e0e0e0;    /* 背景色指定 */
+}
+
+th,td {
+  padding: 5px 10px;          /* 余白指定 */
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    background: rgb(53, 54, 56);
+  }
+  
+  .logo {
+    font-family: 'メイリオ', 'Meiryo', sans-serif;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .search_container{
+  box-sizing: border-box;
+}
+.search_container input[type="text"]{
+  background: rgb(255, 255, 255);
+  border: none;
+  height: 35px;
+}
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+.search_container input[type="submit"]{
+  cursor: pointer;
+  font-family: FontAwesome;
+  border: none;
+  background: rgb(255, 128, 0);
+  color: rgb(0, 0, 0);
+  outline : none;
+  width: 4.0em;
+  height: 37px;
+}
+
+
+.footer02 {
+ color: #808080;
+ background: #e5e5e5;
+ text-align: center;
+ padding: 30px;
+}
+.footer02 a {
+ color: #808080;
+ text-decoration: none;
+}
+.footer02 a:hover {
+ text-decoration: underline;
+}
+.footer02 .menu {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+}
+.footer02 .menu li {
+ margin: 0;
+ padding: 0 20px;
+}
+.footer02 .copyright {
+ margin: 0;
+ padding: 20px 0 0 0;
+}
+
+.example{
+	text-align: center;
+    display: flex;
+    background: rgb(235, 236, 227);
+    border: 1px solid #999;
+    padding: 10px;
+}
+.example>img{
+	
+	text-align: center;
+    background: rgb(192, 192, 192);
+    border: 1px solid #999;
+    padding: 10px;
+}
+/* ここから下がハンバーガーメニューに関するCSS */
+    
+  /* チェックボックスを非表示にする */
+  .drawer_hidden {
+    display: none;
+  }
+  
+  /* ハンバーガーアイコンの設置スペース */
+  .drawer_open {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;/* 重なり順を一番上にする */
+    cursor: pointer;
+  }
+  
+  /* ハンバーガーメニューのアイコン */
+  .drawer_open span,
+  .drawer_open span:before,
+  .drawer_open span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: rgb(255, 255, 255);
+    transition: 0.5s;
+    position: absolute;
+  }
+  
+  /* 三本線の一番上の棒の位置調整 */
+  .drawer_open span:before {
+    bottom: 8px;
+  }
+  
+  /* 三本線の一番下の棒の位置調整 */
+  .drawer_open span:after {
+    top: 8px;
+  }
+  
+  /* アイコンがクリックされたら真ん中の線を透明にする */
+  #drawer_input:checked ~ .drawer_open span {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+  #drawer_input:checked ~ .drawer_open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+  
+  #drawer_input:checked ~ .drawer_open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+    
+  /* メニューのデザイン*/
+  .nav_content {
+    width: 30%;
+    height: 100%;
+    position: fixed;
+    top: 0%;
+    right: -30%; /* メニューを画面の外に飛ばす */
+    z-index: 99;
+    background: rgb(206, 203, 184);
+    transition: .5s;
+    text-align: center;
+    padding-top: 20px;
+  }
+  
+  
+  /* メニュー黒ポチを消す */
+  .nav_list {
+    list-style: none;
+  }
+  
+  /* アイコンがクリックされたらメニューを表示 */
+  #drawer_input:checked ~ .nav_content {
+    right: 0;/* メニューを画面に入れる */
+  }
+
+  .top-box{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+  }
+  
+  .top-box-inner{
+     flex: 1;
+    margin: 0;
+  }
+  .title{
+    margin:0;
+    font-size:2.5em;
+    text-align: center;
+    flex:1;
+  }
+  
+  
+  .logout-button{
+    margin-left:  -200px;
+    font-size:20pt;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    width: 200px;
+    padding: 1rem 4rem;
+    font-weight: bold;
+    border: 2px solid #27acd9;
+    background: #27acd9;
+    color: rgb(255, 0, 0);
+    transition: 0.5s;
+    padding: 5px 1px;
+  }
+  .logout-button:hover{
+    color: #27acd9;
+    background: #fff;
+  }
+  
+  
+  .flex-box{
+     background-color: rgb(255, 255, 255);     /* 背景色指定 */
+      padding:  100px;             /* 余白指定 */
+      display: flex;              /* フレックスボックスにする */
+      flex-wrap: wrap;            /* 折り返し指定 */
+      
+        
+  }
+  .button-top:hover{
+    color: #27acd9;
+    background: #fff;
+  }
+  
+  .button-admin{
+  
+    font-size:25pt;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    width: 300px;
+    margin: auto;
+    padding: 1rem 4rem;
+    font-weight: bold;
+    border: 2px solid #27acd9;
+    background: #27acd9;
+    color: #fff;
+    transition: 0.5s;
+    padding: 40px 35px;
+  }
+  
+  .button-admin:hover{
+    color: #27acd9;
+    background: #fff;
+  }
+  
+  /** ここまで **/
+
+  .top-box{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+  }
+  
+  .top-box-inner{
+     flex: 1;
+    margin: 0;
+  }
+
+/*javascript*/
+
+  @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Exo', sans-serif;
+}
+
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+    
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.area{
+    background: #4e54c8;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    width: 100%;
+    height:100vh;
+    
+   
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}

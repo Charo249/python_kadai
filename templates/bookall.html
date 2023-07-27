@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/book.css')}}">
+
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <!-- ヘッダーロゴ -->
+        <div class="logo">図書管理システム</div>
+       
+        
+        <!-- ハンバーガーメニュー部分 -->
+        <div class="nav">
+      
+          
+          
+          <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+          <input id="drawer_input" class="drawer_hidden" type="checkbox">
+      
+          <!-- ハンバーガーアイコン -->
+          <label for="drawer_input" class="drawer_open"><span></span></label>
+      
+          <!-- メニュー -->
+          <nav class="nav_content">
+            <ul class="nav_list">
+              <li class="nav_item"><a href = "{{url_for('book_register')}}">図書登録</a></li>
+              <li class="nav_item"><a href = "{{url_for('book_all')}}">図書一覧</a></li>
+              <li class="nav_item"><a href = "{{url_for('book_delete')}}">図書削除</a></li>
+              <li class="nav_item"><a href = "{{url_for('book_update')}}">図書情報変更</a></li>
+              
+              <li class="nav_item"><a href = "{{url_for('logout')}}">ログアウト</a></li>
+              
+            </ul>
+          </nav>
+     
+        </div>
+      </header>
+
+
+   <h3 style="text-align:center">図書一覧</h3>
+   <table border="1">
+   <tr>
+      <th style="color:red; text-align: left;" class= "big" width="320">タイトル</th>
+      <th style="color:red; text-align: left;" class = "big" width="320">著者</th>
+      <th style="color:red; text-align: left;" class= "big"  width="320">出版社</th>
+      <th style="color:red; text-align: left;" class= "big" width="320">isbn</th>
+   </tr>
+
+   {% for book in books%}
+   <tr>
+      <th style="color:none; text-align: left;" class= "big" width="320"><font size="5">{{ book[0] }}<font></th>
+      <th style="color:none; text-align: left;" class= "big" width="320"><font size="5">{{ book[1] }}<font></th>
+      <th style="color:none; text-align: left;" class= "big" width="320"><font size="5">{{ book[2] }}<font></th>
+      <th style="color:none; text-align: left;" class= "big" width="320"><font size="5">{{ book[3] }}<font></th>
+   </tr>
+   {% endfor %}
+   </table><br><br>
+
+  </div>
+      <div style="text-align:right">
+      <a href="{{url_for('return_bookall')}}" class = "button">戻る</a>
+      </div>
+
+</body>
+</html>
